@@ -43,11 +43,12 @@
     <div class='tot'><p class='button is-success'>$&nbsp;<%= @sum %></p></div>
   </div>
   <br>
-  <% @user_grup.each do |deal| %>
+  <% @group_deals.each do |deal| %>
   <div class='groups'>
     <div><%#= image_tag(deal.icon, class: 'pics') %></div>
     <div class='create'>
       <p class='grup'><%= deal.name %></p>
+      <p class='grup'><%= deal.author.name %></p>
       <p class='date'><%= deal.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
     </div>
     <div class='amt'><p class='amtp'><%= link_to 'Show', deal, class: 'amtp' %></p></div>

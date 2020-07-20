@@ -13,8 +13,8 @@ class GroupsController < ApplicationController
   # GET /deals/1
   # GET /deals/1
   def show
-    @user_grup = Deal.all
-    @user_grup
+    @group = Group.find(params[:id])
+    @group_deals = @group.deals
   end
 
   # GET /deals/new

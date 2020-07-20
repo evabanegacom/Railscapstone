@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = current_user
     @sum = @user.deals.sum(:amount)
     @deals = Deal.all
-    @user_deals = Deal.joins(:dealings).where(author_id: current_user.id).includes(:dealings, groups: :icon_attachment)
+    @user_deals = Deal.joins(:dealings).where(author_id: current_user.id).includes(:dealings, groups: :icon_attachment).to_a
   end
 
   def external

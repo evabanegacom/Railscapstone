@@ -15,9 +15,9 @@ class User < ApplicationRecord
 
   def image_type
     errors.add(:image, 'is missing') if image.attached? == false
-    if image.attached? == true
+    if image.attached?
       unless image.content_type.in?(%('images/jpg image/jpeg image/png'))
-        errors.add(:image, 'needs to be ajpeg or png')
+        errors.add(:image, 'needs to be a jpeg or png')
       end
     end
   end
