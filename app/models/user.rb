@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -10,14 +12,13 @@ class User < ApplicationRecord
   validate :image_type
 
   private
+
   def image_type
-    if image.attached? == false
-      errors.add(:image, 'is missing')
-    end
+    errors.add(:image, 'is missing') if image.attached? == false
     if image.attached? == true
-     if !image.content_type.in?(%('images/jpg image/jpeg image/png'))
-       errors.add(:image, 'needs to be ajpeg or png')
-     end
+      unless image.content_type.in?(%('images/jpg image/jpeg image/png'))
+        errors.add(:image, 'needs to be ajpeg or png')
+      end
     end
   end
 
