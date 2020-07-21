@@ -8,10 +8,6 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @user_deals ||= current_user.deals.order('created_at DESC')
-    @user_deals.includes(:group)
-    @sum = @user_deals.sum(:amount)
-    @groups = Group.all
   end
 
   def make_deals
@@ -22,7 +18,6 @@ class UsersController < ApplicationController
     sum_deals
   end
 
-  
   def external
     @user = current_user
     @sum = @user.deals.sum(:amount)

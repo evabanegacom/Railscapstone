@@ -5,7 +5,7 @@ class DealsController < ApplicationController
   # GET /deals
   # GET /deals.json
   def index
-    @deals = Deal.all.includes(:author)
+    @deals = Deal.all.includes(:author).order('created_at DESC')
     @sum = @deals.sum(:amount)
   end
 
@@ -34,7 +34,7 @@ class DealsController < ApplicationController
     @deal = current_user.deals.build(deal_params)
     respond_to do |format|
       if @deal.save
-        format.html { redirect_to root_path, notice: 'Deal was successfully created.' }
+        format.html { redirect_to @deal, notice: 'Deal was successfully created.' }
         format.json { render :show, status: :created, location: @deal }
       else
         format.html { render :new }

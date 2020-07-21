@@ -6,14 +6,5 @@ class Deal < ApplicationRecord
   validates :amount, presence: true
   has_many :comments, dependent: :destroy
 
-  #   def self.recent_deals
-  #     all.filter { |e| e.created_at  <= Time.now + 360.minutes }
-  #   end
-
-  #   def self.past_deals
-  #     all.filter { |e| (e.created_at + 720.minutes) < Time.now}
-  #   end
-
-  #   scope :recent_deals, ->(date) { where('created_at < ?', date) }
-  #   scope :past_deals, ->(date) { where('created_at < ?', date) }
+  default_scope { order('created_at DESC') }
 end

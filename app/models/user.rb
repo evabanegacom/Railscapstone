@@ -22,11 +22,7 @@ class User < ApplicationRecord
     end
   end
 
-  # def recent_deals
-  #   deals.filter { |e| e.created_at <= Time.now + 360.minutes }
-  # end
-
-  # def past_deals
-  #   deals.filter { |e| (e.created_at + 720.minutes) < Time.now }
-  # end
+  def recent_deals
+    all.filter { |e| e.created_at  < Time.now }
+  end
 end
