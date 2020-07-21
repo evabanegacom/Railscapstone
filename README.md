@@ -35,14 +35,14 @@ These activities can be grouped or categorized based on the users choice; the de
 
 To have this app on your pc, you need to:
 * have Ruby & Ruby on Rails installed in your computer
-* [download](git@github.com:evabanegacom/private-events.git) or clone this repo:
+* [download](git@github.com:evabanegacom/Railscapstone.git) or clone this repo:
   - Clone with SSH:
   ```
-    git@github.com:evabanegacom/private-events.git
+    git@github.com:evabanegacom/Railscapstone.git
   ```
   - Clone with HTTPS
   ```
-    https://github.com/evabanegacom/private-events.git
+    https://github.com/evabanegacom/Railscapstone.git
   ```
 * Open the terminal inside the clone directory and run the bundler:-
   - ```$ bundler install```
@@ -58,16 +58,19 @@ This project was built using these technologies.
 * Rubocop
 * Stickler
 * VsCode
+* active storage
 
 <!-- CONTACT -->
 ## Contributors
 
 👤 **Admin 1** 
 
-
 👤 **Precious**
 
 - GitHub: [@Precious](https://github.com/evabanegacom)
+
+# LIVE DEMO
+(https://spetsnazz.herokuapp.com/users/edit)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
