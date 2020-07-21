@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module ApplicationHelper
   def avatar_for
     if current_user.image.attachment.nil?
@@ -22,26 +20,18 @@ module ApplicationHelper
   end
 
   def navbar2
-    if user_signed_in?
-      link_to current_user.name, show_path, class: 'button is-link'
-    end
+    link_to current_user.name, show_path, class: 'button is-link' if user_signed_in?
   end
 
   def navbar3
-    if user_signed_in?
-      link_to 'Logout', destroy_user_session_path, method: :delete, class: 'button'
-    end
+    link_to 'Logout', destroy_user_session_path, method: :delete, class: 'button' if user_signed_in?
   end
 
   def navbar4
-    unless user_signed_in?
-      link_to 'Sign up', new_user_registration_path, class: 'button is-info'
-    end
+    link_to 'Sign up', new_user_registration_path, class: 'button is-info' unless user_signed_in?
   end
 
   def navbar5
-    unless user_signed_in?
-      link_to 'Login', new_user_session_path, class: 'button is-info'
-    end
+    link_to 'Login', new_user_session_path, class: 'button is-info' unless user_signed_in?
   end
 end

@@ -28,9 +28,8 @@ This project is part of the Microverse curriculum in Ruby on Rails module!
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project is a project on getting details about transactions/deals made by users. in this instance, a person creates a
-user profile by filling the forms with set of valid requirements and enters their transaction details including the groups they may belong to, also other users can see these transactions and inquire about them or give their opinions by making comments on these transactions
-can be also create groups of their choice to categorize their transactions
+The idea of this project is to keep track of data relating to activities made by users.
+These activities can be grouped or categorized based on the users choice; the details of these activities are stored and analysed. Also there is a part where opinions can be shared or comments can be made based on experience obtained by the users with respect to the activities carried out.
 <!-- INSTALLATION -->
 ## Installation
 

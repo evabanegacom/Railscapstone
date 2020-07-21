@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -15,14 +13,10 @@ class User < ApplicationRecord
 
   def image_type
     errors.add(:image, 'is missing') if image.attached? == false
-    if image.attached?
+    if image.attached? == true
       unless image.content_type.in?(%('images/jpg image/jpeg image/png'))
         errors.add(:image, 'needs to be a jpeg or png')
       end
     end
-  end
-
-  def recent_deals
-    all.filter { |e| e.created_at  < Time.now }
   end
 end
