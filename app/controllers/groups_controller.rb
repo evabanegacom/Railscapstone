@@ -14,7 +14,7 @@ class GroupsController < ApplicationController
   # GET /deals/1
   def show
     @group = Group.find(params[:id])
-    @group_deals = @group.deals.includes(groups: :icon_attachment)
+    @group_deals = @group.deals.includes(:author)
   end
 
   # GET /deals/new
@@ -79,7 +79,7 @@ class GroupsController < ApplicationController
 
   def sum_of_deals
     @user_deals_value = 0
-    @group_deals = @group.deals.includes(groups: :icon_attachment)
+    @group_deals = @group.deals
     @group_deals.each do |a|
       @user_deals_value += a.amount
     end

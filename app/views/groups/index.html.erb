@@ -58,10 +58,10 @@
   <div class='groups'>
     <div><%= image_tag(group.icon, class: 'pics') %></div>
     <div class='create'>
-      <p class='grup button is-info'><%= group.name %></p>
+      <p class='grup button is-info'><%= link_to group.name, group, class: 'has-text-white'%></p>
       <p class='date has-text-danger dates2'><%= group.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
     </div>
-    <div class='amt'><p class='amtp'><%= link_to 'open', group, class: 'amtp has-text-black' %></p></div><br>
+    <div class='amt'><p class='amtp'><%= group.user.name %></p></div><br>
     <% end %>
   </div>
   <div class='last'>

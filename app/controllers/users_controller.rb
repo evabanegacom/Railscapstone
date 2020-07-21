@@ -40,7 +40,7 @@ class UsersController < ApplicationController
 
   def sum_deals
     @user_deals_value = 0
-    @user_deals = Deal.joins(:dealings).where(author_id: current_user.id).includes(:dealings, groups: :icon_attachment).to_a
+    @user_deals = Deal.joins(:dealings).where(author_id: current_user.id)
     @user_deals.each do |a|
       @user_deals_value += a.amount
     end
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
 
   def sum_external_deals
     @user_deals_value = 0
-    @user_deals = Deal.joins(:dealings).where(author_id: current_user.id).includes(:dealings, groups: :icon_attachment).to_a
+    @user_deals = Deal.joins(:dealings).where(author_id: current_user.id)
     @external = current_user.deals - @user_deals
     @external.each do |a|
       @user_deals_value += a.amount
