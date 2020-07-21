@@ -6,7 +6,7 @@
     <div><p class='username'><%= current_user.name %></p></div>
     <br>
     <div class='acc'>
-      <div class='deal-name'><p class='acc2 button is-link'><%= @group.name %></p></div>
+      <div class='deal-name'><p class='deal-title button is-link'><%= @group.name.upcase() %></p></div>
       <br>
     </div>
     <br>
@@ -40,17 +40,17 @@
   </div>
   <div class='cost'>
     <div class='total'><p class='button is-info'>Total deals</p></div>
-    <div class='tot'><p class='button is-success'>$&nbsp;<%= sum_of_deals %></p></div>
+    <div class='tot'><p class='button is-success has-text-weight-bold'>$&nbsp;<%= sum_of_deals %></p></div>
   </div>
   <br>
   <% @group_deals.each do |deal| %>
   <div class='groups'>
-      <div class='hass'><p class='grup'><%= deal.author.name %></p></div>
+      <div class='hass'><p class='has-text-black'><%= deal.author.name %></p></div>
     <div class='create butt'>
     <div class='mta'><p><%= link_to deal.name, deal, class: 'mtap button is-info' %></p></div>
       <p class='grup-d has-text-black'><%= deal.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
     </div>
-      <p class='date'><%= deal.amount %></p>
+      <p class='has-text-black'><%= deal.amount %></p>
     <% end %>
   </div>
   <div class='last'>

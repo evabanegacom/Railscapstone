@@ -6,6 +6,7 @@ class DealsController < ApplicationController
   # GET /deals.json
   def index
     @deals = Deal.all
+    @sum = @deals.sum(:amount)
   end
 
   # GET /deals/1

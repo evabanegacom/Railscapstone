@@ -39,11 +39,11 @@
   </div>
 </section>
 
- <section class='sec6'>
+ <section class='sec2'>
   <div class='whole'>
     <div class='first'>
       <p class='iconss'><i class="fa fa-bars" aria-hidden="true"></i></p>
-      <p class='iconss'>ALL DEALS</p>
+      <p class='iconss'>DEALS for group</p>
       <p class='iconss'><i class="fa fa-search" aria-hidden="true"></i></p>
     </div>
     <div class='recent'>
@@ -52,21 +52,21 @@
   </div>
   <div class='cost'>
     <div class='total'><p class='button is-info'>Total deals</p></div>
-    <div class='tot'><p class='button is-success'>&nbsp;<%= @deals.size %></p></div>
+    <div class='tot'><p class='button is-success has-text-weight-bold'>$&nbsp;<%= @sum %></p></div>
   </div>
   <br>
   <% @deals.each do |deal| %>
   <div class='groups'>
-    <div><p class='grup button is-info'><%= link_to deal.name, deal, class: 'has-text-white' %></p></div>
-    <div class='create'>
-      <p class='date has-text-black'><%= deal.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
+      <div class='hass'><p class='has-text-black'><%= link_to deal.author.name, deal, class: 'has-text-black' %></p></div>
+    <div class='create butt'>
+    <div class='mta'><p><%= link_to deal.name, deal, class: 'mtap button is-info' %></p></div>
+      <p class='grup-d has-text-black'><%= deal.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
     </div>
-    <div class='amt'><p class='amtp'><p><%= link_to 'grups(7)', deal, class: 'amtp' %></p></div>
+      <p class='has-text-black'><%= deal.amount %></p>
     <% end %>
   </div>
-  <div class='empty'></div>
   <div class='last'>
-    <div class='scan'><p>scan</p></div>
+    <div class='scan'><p><%= link_to 'Add New', new_deal_path, class: 'has-text-white' %></p></div>
   </div>
   </div>
   </section>
