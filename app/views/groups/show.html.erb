@@ -11,7 +11,7 @@
     </div>
     <br>
     <div class='acc'>
-      <div><p class='acc2 has-text-white'>deals&nbsp;<%= @group.name %></p></div>
+      <div><p class='acc2 has-text-white'>Deals&nbsp;(&nbsp;<%= @group_deals.size %>&nbsp;)</p></div>
       <br>
     </div>
     <br>
@@ -21,7 +21,7 @@
     </div>
     <br>
     <div class='acc'>
-      <div><p class='acc2'><%= @group.created_at.to_date.to_formatted_s(:long_ordinal) %></p></div>
+      <div><p class='acc2'>Created by&nbsp;<%= @group.user.name %></p></div>
       <br>
     </div>
     <br>
@@ -40,23 +40,21 @@
   </div>
   <div class='cost'>
     <div class='total'><p class='button is-info'>Total deals</p></div>
-    <div class='tot'><p class='button is-success'>$&nbsp;<%= @sum %></p></div>
+    <div class='tot'><p class='button is-success'>$&nbsp;<%= sum_of_deals %></p></div>
   </div>
   <br>
   <% @group_deals.each do |deal| %>
   <div class='groups'>
-    <div><%#= image_tag(deal.icon, class: 'pics') %></div>
-    <div class='create'>
-      <p class='grup'><%= deal.name %></p>
-      <p class='grup'><%= deal.author.name %></p>
-      <p class='date'><%= deal.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
+      <div class='hass'><p class='grup'><%= deal.author.name %></p></div>
+    <div class='create butt'>
+    <div class='mta'><p><%= link_to deal.name, deal, class: 'mtap button is-info' %></p></div>
+      <p class='grup-d has-text-black'><%= deal.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
     </div>
-    <div class='amt'><p class='amtp'><%= link_to 'Show', deal, class: 'amtp' %></p></div>
-    <div class='amt'><p><%= link_to 'Show', deal, class: 'amtp' %></p></div>
+      <p class='date'><%= deal.amount %></p>
     <% end %>
   </div>
   <div class='last'>
-    <div class='scan'><p>scan</p></div>
+    <div class='scan'><p><%= link_to 'Add New', new_deal_path, class: 'has-text-white' %></p></div>
   </div>
   </div>
   </section>

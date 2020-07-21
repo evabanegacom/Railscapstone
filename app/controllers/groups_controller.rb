@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   before_action :set_deal, only: %i[show edit update destroy]
   before_action :authenticate_user!
-  helper_method :filter_groups
+  helper_method :sum_of_deals
 
   # GET /deals
   # GET /deals.json
@@ -14,7 +14,7 @@ class GroupsController < ApplicationController
   # GET /deals/1
   def show
     @group = Group.find(params[:id])
-    @group_deals = @group.deals
+    @group_deals = @group.deals.includes(groups: :icon_attachment)
   end
 
   # GET /deals/new
@@ -77,8 +77,12 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:name, :icon)
   end
 
-  def filter_groups
-    @group = Group.find(params[:id])
-    puts @group.name
+  def sum_of_deals
+    @user_deals_value = 0
+    @group_deals = @group.deals.includes(groups: :icon_attachment)
+    @group_deals.each do |a|
+      @user_deals_value += a.amount
+    end
+    @user_deals_value
   end
 end
