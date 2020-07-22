@@ -57,12 +57,12 @@
   <br>
   <% @deals.each do |deal| %>
   <div class='groups'>
-      <div class='hass'><p class='has-text-black'><%= link_to deal.author.name, deal, class: 'has-text-black' %></p></div>
-    <div class='create butt'>
-    <div class='mta'><p><%= link_to deal.name, deal, class: 'mtap button is-info' %></p></div>
-      <p class='grup-d has-text-black'><%= deal.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
+      <div class='hass imgh'><p class='has-text-black names2'><%= link_to deal.author.name, deal, class: 'has-text-black' %></p></div>
+    <div class='create another-create'>
+    <p class='buttonss'><%= link_to deal.name, deal, class: 'mtap button is-info' %></p>
+      <p class='grup-d has-text-danger'><%= deal.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
     </div>
-      <p class='has-text-black'><%= deal.amount %></p>
+      <div class='imgn'><p class='has-text-black names3'><%= deal.amount %></p></div>
     <% end %>
   </div>
   <div class='last'>
