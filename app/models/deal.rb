@@ -14,5 +14,4 @@ class Deal < ApplicationRecord
   def uniqueness_of_name_and_author
     errors.add(:name, 'must be unique') if author.deals.where(name: name).exists?
   end
-  
 end

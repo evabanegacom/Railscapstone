@@ -21,7 +21,7 @@ RSpec.describe Group, type: :model do
 
   context 'validation tests' do
     it 'ensures name presence' do
-      group = Group.new().save
+      group = Group.new.save
       expect(group).to eql(false)
     end
   end

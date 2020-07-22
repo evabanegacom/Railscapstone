@@ -10,7 +10,8 @@ RSpec.describe Comment, type: :model do
         .with_message('20 characters in comment is the maximum allowed.')
     }
     it {
-      should validate_presence_of(:body) }
+      should validate_presence_of(:body)
+    }
 
     it {
       should validate_length_of(:body)
