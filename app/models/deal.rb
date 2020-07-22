@@ -10,7 +10,7 @@ class Deal < ApplicationRecord
 
   default_scope { order('created_at DESC') }
   private
-  
+
   def uniqueness_of_name_and_author
     errors.add(:name, 'must be unique') if author.deals.where(name: name).exists?
   end
