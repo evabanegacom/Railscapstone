@@ -3,7 +3,8 @@ class Group < ApplicationRecord
   has_one_attached :icon, dependent: :destroy
   has_many :dealings, dependent: :destroy
   has_many :deals, through: :dealings
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true, length: { maximum: 20,
+                                             too_long: '20 characters in name is the maximum allowed.' }
   validate :icon_type
 
   private

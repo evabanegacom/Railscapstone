@@ -23,8 +23,6 @@ This project is part of the Microverse curriculum in Ruby on Rails module!
   * [Built With](#built-with)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
-* [License](#license)
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -47,6 +45,7 @@ To have this app on your pc, you need to:
 * Open the terminal inside the clone directory and run the bundler:-
   - ```$ bundler install```
 * run rails db:migrate. This creates the database with the corresponding tables, columns and associations:-
+  - ```$ rails db:create```
   - ```$ rails db:migrate```
 * You can test the database by running:-
   - ```$ rails console```
@@ -63,14 +62,12 @@ This project was built using these technologies.
 <!-- CONTACT -->
 ## Contributors
 
-👤 **Admin 1** 
-
 👤 **Precious**
 
 - GitHub: [@Precious](https://github.com/evabanegacom)
 
 # LIVE DEMO
-(https://spetsnazz.herokuapp.com/users/edit)
+(https://spetsnazz.herokuapp.com/users/sign_in)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements

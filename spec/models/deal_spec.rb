@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Deal, type: :model do
   describe 'validation tests' do
-    it { should validate_presence_of(:name) }
     it {
       should validate_presence_of(:amount)
     }

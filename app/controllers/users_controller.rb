@@ -29,10 +29,6 @@ class UsersController < ApplicationController
 
   private
 
-  def deal_params
-    params.require(:deal).permit(:name, :amount, { group_ids: [] })
-  end
-
   def sum_deals
     @user_deals_value = 0
     @user_deals = Deal.joins(:dealings).where(author_id: current_user.id)
