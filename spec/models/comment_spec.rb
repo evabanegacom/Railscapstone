@@ -22,4 +22,12 @@ RSpec.describe Comment, type: :model do
   describe 'Association tests' do
     it { should belong_to(:deal) }
   end
+
+  context 'validation tests' do
+    it 'ensures name uniqueness' do
+      Comment.new(name: 'spetsnaz', body: 'this was really cool').save
+      second_user = Comment.new(name: 'spetsnaz', body: 'this was really cool').save
+      expect(second_user).to eql(false)
+    end
+  end
 end
