@@ -4,7 +4,7 @@ class Group < ApplicationRecord
   has_many :dealings, dependent: :destroy
   has_many :deals, through: :dealings
   validates :name, presence: true, uniqueness: true, length: { maximum: 20,
-                                                               too_long: '20 characters in name is the maximum allowed.' }
+                                                               too_long: '20 characters in name is the maximum allowed.' } # rubocop:disable Layout/LineLength: Line is too long
   validate :icon_type
 
   private
