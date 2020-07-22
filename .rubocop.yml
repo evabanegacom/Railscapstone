@@ -8,6 +8,8 @@ AllCops:
     - "node_modules/**/*"
     - "test/controllers/users_controller_test.rb"
     - "test/controllers/users_controller_test.rb"
+    - 'app/models/comment.rb'
+    - 'app/models/group.rb'
 
   DisplayCopNames: true
 
