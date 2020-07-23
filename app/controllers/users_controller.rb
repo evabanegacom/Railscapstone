@@ -13,7 +13,8 @@ class UsersController < ApplicationController
   def make_deals
     @user = current_user
     @deals = Deal.all
-    @user_deals = Deal.joins(:dealings).where(author_id: current_user.id).includes(groups: :icon_attachment).to_a
+    #@user_deals = Deal.joins(:dealings).uniq.
+    @user_deals = Deal.joins(:dealings).where(author_id: current_user).includes(groups: :icon_attachment).to_a
     @sum = @user.deals.sum(:amount)
     sum_deals
   end
@@ -31,8 +32,8 @@ class UsersController < ApplicationController
 
   def sum_deals
     @user_deals_value = 0
-    @user_deals = Deal.joins(:dealings).where(author_id: current_user.id)
-    @user_deals.each do |a|
+    @user_deals = Deal.joins(:dealings).where(author_id: current_user)
+    @user_deals.uniq.each do |a|
       @user_deals_value += a.amount
     end
     @user_deals_value

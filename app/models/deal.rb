@@ -6,7 +6,7 @@ class Deal < ApplicationRecord
                                              too_long: '20 characters in name is the maximum allowed.' }
   validates :amount, presence: true
   has_many :comments, dependent: :destroy
-  validate :uniqueness_of_name_and_author
+  #validate :uniqueness_of_name_and_author
 
   default_scope { order('created_at DESC') }
   private
