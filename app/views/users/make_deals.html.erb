@@ -54,10 +54,8 @@
     <div class='tot'><p class='button is-success'>$&nbsp;<%= sum_deals %></p></div>
   </div>
   <br>
-    <%# @campaign.emails.reject {|x| x.new_record?}.sort{|x,y| x <=> y}.each do |email| %>
   <% @user_deals.uniq.each do |g| %>
   <div class='groups'>
-    <div><%#= image_tag(g.groups.attached_icon, class: 'pics') %></div>
       <% g.groups.each  do |d| %>
     <div><%= image_tag(d.icon, class: 'pics') %></div>
     <% end %>
