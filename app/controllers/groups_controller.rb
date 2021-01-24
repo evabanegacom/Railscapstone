@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
   # GET /deals
   # GET /deals.json
   def index
-    @groups = Group.all.order('name ASC').includes(icon_attachment: :blob)
+    @groups = Group.all.order('name ASC').includes(:user, icon_attachment: :blob)
     @user = current_user
   end
 

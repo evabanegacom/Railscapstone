@@ -42,35 +42,34 @@
   <div class='whole'>
     <div class='first'>
       <p class='iconss'><i class="fa fa-bars" aria-hidden="true"></i></p>
-      <p class='iconss'>Transactions</p>
+      <p class='iconss'>Grouped deals</p>
       <p class='iconss'><i class="fa fa-search" aria-hidden="true"></i></p>
     </div>
     <div class='recent'>
       <div class='most'><p class='para'>most recent</p></div>
-      <div class='most1'><p class='para1'>most recent</p></div>
+      <div class='most1'><p class='para1'>past deals</p></div>
   </div>
   <div class='cost'>
     <div class='total'><p class='button is-info'>Total deals</p></div>
     <div class='tot'><p class='button is-success'>$&nbsp;<%= sum_deals %></p></div>
   </div>
   <br>
-  <% @user_deals.each do |g| %>
+  <% @user_deals.uniq.each do |g| %>
   <div class='groups'>
-    <div><%#= image_tag(g.groups.attached_icon, class: 'pics') %></div>
       <% g.groups.each  do |d| %>
-    <div class='logo'><%= image_tag(d.icon, class: 'pics') %></div>
+    <div><%= image_tag(d.icon, class: 'pics') %></div>
     <% end %>
     <div class='create'>
       <p class='grup button is-info'><%= g.name %></p>
       <p class='date has-text-black dates'><%= g.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
     </div>
-    <div class='amt'><p amount class='amtp'><%= g.amount %></p></div>
-    <div class='amt'><p amount class='amtp'><%= link_to 'open', g, class: 'has-text-primary'%></p></div>
+    <div><p amount class='amtp'><%= g.amount %></p></div>
+    <div><p amount class='amtp'><%= link_to 'open', g, class: 'has-text-primary'%></p></div>
     <% end %>
   </div>
   <div class='empty'></div>
   <div class='last'>
-    <div class='scan'><p>scan</p></div>
+    <div class='scan'><p><%= link_to 'ADD NEW', new_deal_path, class: 'has-text-white' %></p></div>
   </div>
   </div>
   </section>

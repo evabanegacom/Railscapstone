@@ -343,7 +343,60 @@
   top: -4px;
 }
 
+.buttons {
+  position: relative;
+  top: 10px;
+}
+
 .deal-title {
   margin-left: 40px;
   font-weight: 700;
+}
+
+.imgss {
+  float: left;
+}
+
+.imgh {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top:-10px;
+}
+
+.imgn {
+  width: 30%;
+}
+
+.another-create {
+  width: 30%;
+  padding-bottom: 10px;
+}
+
+.namess {
+  position: relative;
+  top: 10px;
+  left: 40px;
+}
+
+.buttonss {
+  position: relative;
+  top: 0px;
+}
+
+.names3 {
+  position: relative;
+  top: 10px;
+  left: 40px;
+}
+
+.names2 {
+  position: relative;
+  top: -10px;
+}
+
+.oops {
+  padding-bottom: 30px;
 }

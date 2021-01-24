@@ -56,16 +56,16 @@
   <br>
   <% @groups.each do |group| %>
   <div class='groups'>
-    <div><%= image_tag(group.icon, class: 'pics') %></div>
-    <div class='create'>
-      <p class='grup button is-info'><%= link_to group.name, group, class: 'has-text-white'%></p>
+    <div class='imgh'><%= image_tag(group.icon, class: 'pics') %></div>
+    <div class='create another-create'>
+      <p class='grup buttons button is-info'><%= link_to group.name, group, class: 'has-text-white'%></p>
       <p class='date has-text-danger dates2'><%= group.created_at.to_date.to_formatted_s(:long_ordinal) %></p>
     </div>
-    <div class='amt'><p class='amtp'><%= group.user.name %></p></div><br>
+    <div class='amt imgn'><p class='amtp namess'><%= group.user.name %></p></div><br>
     <% end %>
   </div>
   <div class='last'>
-    <div class='scan'><p>scan</p></div>
+    <div class='scan'><p><%= link_to 'ADD NEW', new_group_path, class: 'has-text-white' %></p></div>
   </div>
   </div>
   </section>
